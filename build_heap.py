@@ -27,8 +27,9 @@ def main():
         if fails:
             try:
                 with open("./tests/" + fails) as fails1:
-                    n = int(fails1.readlines()[0].strip("\n"))
-                    data = list(map(int, fails1.readlines()[1].split()))
+                    f = fails1.readlines()
+                    n = int(f[0].strip("\n"))
+                    data = list(map(int, f[1].split()))
                     assert len(data) == n
             except FileNotFoundError:
                 print("Fails nav atrasts")
