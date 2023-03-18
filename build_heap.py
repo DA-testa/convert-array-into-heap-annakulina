@@ -26,7 +26,7 @@ def main():
         fails = input("Ievadiet faila nosaukumu: ")
         if fails:
             try:
-                with open("./test/" + fails) as fails1:
+                with open("./tests/" + fails) as fails1:
                     n = int(fails1.readline())
                     data = list(map(int, fails1.readline().split()))
             except FileNotFoundError:
