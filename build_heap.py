@@ -23,7 +23,7 @@ def main():
 
     text = input("Ievadiet F testiem vai I manuālai ievadei: ")
     if 'F' in text:
-        fails = input("Ievadiet faila nosaukumu: ")
+        fails = input("Ievadiet faila nosaukumu: ").strip()
         if fails:
             try:
                 with open("./tests/" + fails) as fails1:
