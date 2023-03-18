@@ -15,6 +15,8 @@ def build_heap(data):
                 swaps.append((a, kr))
                 data[a], data[kr] = data[kr], data[a]    
                 a = kr
+            else:
+                break
 
     return swaps
 
@@ -38,7 +40,7 @@ def main():
 
     elif 'I' in text:
         n = int(input())
-        data = list(map(int, input().split()))
+        data = list(map(int, input().strip().split()))
         assert len(data) == n
         swaps = build_heap(data)
 
