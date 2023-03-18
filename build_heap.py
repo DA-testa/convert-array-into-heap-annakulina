@@ -27,14 +27,14 @@ def main():
         if fails:
             try:
                 with open("./tests/" + fails) as fails1:
-                    f = fails1.readlines()
-                    n = int(f[0].strip("\n"))
-                    data = list(map(int, f[1].split()))
-                    assert len(data) == n
+                    f = fails1.readlines()      
             except FileNotFoundError:
                 print("Fails nav atrasts")
                 return
-            
+            n = int(f[0])
+            data = list(map(int, f[1].split()))
+            assert len(data) == n
+
     elif 'I' in text:
         n = int(input())
         data = list(map(int, input().split()))
