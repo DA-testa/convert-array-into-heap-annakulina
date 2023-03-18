@@ -40,7 +40,7 @@ def main():
 
     elif 'I' in text:
         n = int(input())
-        data = list(map(int, input().strip().split()))
+        data = list(map(int, input().split()))
         assert len(data) == n
         swaps = build_heap(data)
 
