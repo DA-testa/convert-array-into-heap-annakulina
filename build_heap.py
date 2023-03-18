@@ -23,17 +23,17 @@ def main():
 
     text = input("Ievadiet F testiem vai I manuālai ievadei: ")
     if 'F' in text:
-        fails = input("Ievadiet faila nosaukumu: ").strip()
+        fails = input("Ievadiet faila nosaukumu: ")
         if fails:
             try:
-                with open("./tests/" + fails) as fails1:
-                    f = fails1.readlines()      
+                with open("./tests/" + fails) as fails1:  
+                    n = int(fails1.readlines()[0])
+                    data = list(map(int, fails1.readlines()[1].split()))
+                    assert len(data) == n
+                    swaps = build_heap(data)    
             except FileNotFoundError:
                 print("Fails nav atrasts")
                 return
-            n = int(f[0])
-            data = list(map(int, f[1].split()))
-            assert len(data) == n
 
     elif 'I' in text:
         n = int(input())
